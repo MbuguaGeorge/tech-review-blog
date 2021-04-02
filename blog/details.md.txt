@@ -1,0 +1,7 @@
+**urls to handle paths
+**views to handle pages
+**database to hold blog posts
+**database to hold images
+**search engine for specific blogs
+**model for emails
+**databse for holding messages

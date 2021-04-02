@@ -1,0 +1,62 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <!--Trends Page-->
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Dev Blog</title>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+        <Link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css" />
+        <link rel="stylesheet" type="text/css" href="{% static 'blog/css/style.css' %}">
+    </head>
+    <body>
+        <!--Navigation-->
+        <nav id="trial">
+            <ul class="nav-links" >
+                <li>
+                    <a href="{% url 'index' %}">Home</a>
+                </li>
+                <li>
+                    <a href="{% url 'trends' %}">Trends</a>
+                </li>
+                <li>
+                    <a href="{% url 'blog' %}">Blogs</a>
+                </li>
+                <li>
+                    <a href="{% url 'contact' %}">Contact Us</a>
+                </li>
+            </ul>
+            <!--Responsive Navigation-->
+            <div class="header">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <!--End of Responsive Navigation-->
+        </nav>
+        <!--End of Navigation-->
+       <div class="container">
+            <div class="trends">
+                <div class="row">
+                    <div class="column">
+                    {% if t %}
+                    {% for trend in t %}
+                    <div class="trend-container">
+                        <img src="{{trend.thumbnail.url}}" />
+                        <ol>
+                            <p>Cloud Computing</p>
+                            <small>published 3 months ago | George</small>
+                            <h4>You know how hard riding a bike at first is, well, programming is kinda like that. You never know how easy it is till you give it a try.</h4>
+                            <a href="#">Read More</a>
+                        </ol>
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+                    </div>
+                </div>
+            </div>
+       </div>
+        <script src="{% static 'blog/js/main.js' %}"></script>
+    </body>
+</html>

@@ -1,0 +1,78 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <!--Contact Page-->
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Dev Blog</title>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+        <Link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css" />
+        <link rel="stylesheet" type="text/css" href="{% static 'blog/css/style.css' %}">
+    </head>
+    <body>
+        <!--Navigation-->
+        <nav id="trial">
+            <ul class="nav-links" >
+                <li>
+                    <a href="{% url 'index' %}">Home</a>
+                </li>
+                <li>
+                    <a href="{% url 'trends' %}">Trends</a>
+                </li>
+                <li>
+                    <a href="{% url 'blog' %}">Blogs</a>
+                </li>
+                <li>
+                    <a href="{% url 'contact' %}">Contact Us</a>
+                </li>
+            </ul>
+            <!--Responsive Navigation-->
+            <div class="header">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <!--End of Responsive Navigation-->
+        </nav>
+        <!--End Navigation-->
+        <!--Contact Page Form-->
+        <div class="contact">
+            <div class="container">
+                <div class="contact-page">
+                    <h2>Contact</h2>
+                    <form>
+                        <input 
+                            type="text"
+                            placeholder="Name"
+                            name="name"
+                        />
+                    </form>
+                    <form>
+                        <input 
+                            type="text"
+                            placeholder="Email"
+                            name="email"
+                        />
+                    </form>
+                    <form>
+                        <textarea
+                            type="text"
+                            placeholder="Type your message here..."
+                            name="message"
+                        ></textarea>
+                    </form>
+                    <form class="submit" >
+                        <input 
+                            type="submit"
+                            value="SEND MESSAGE"
+                            class="btn"
+                        />
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!--End of Contact Form-->
+        <script src="{% static 'blog/js/main.js' %}"></script>
+    </body>
+</html>
