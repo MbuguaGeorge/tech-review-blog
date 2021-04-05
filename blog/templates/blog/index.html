@@ -7,40 +7,85 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>tech review</title>
         <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <Link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css" />
         <link rel="stylesheet" type="text/css" href="{% static 'blog/css/style.css' %}">
     </head>
     <body data-hijacking="off" data-animation="none">
         <!--Navigation-->
-        <nav>
-            <ul class="nav-links" >
-                <li>
-                    <a href="{% url 'index' %}">Home</a>
-                </li>
-                <li>
-                    <a href="{% url 'trends' %}">Trends</a>
-                </li>
-                <li>
-                    <a href="{% url 'blog' %}">Blogs</a>
-                </li>
-                <li>
-                    <a href="{% url 'contact' %}">Contact Us</a>
-                </li>
-            </ul>
-            <!--Responsive Navigation-->
-            <div class="header">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
+        <div class="navigation">
+            <div class="logo">
+                <ul class="social-links">
+                    <li>
+                        <a href="#"><img src="{% static 'blog/images/instagram.svg' %}" width=15 /></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="{% static 'blog/images/twitter.svg' %}" width=15 /></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="{% static 'blog/images/linkedin.svg' %}" width=15 /></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="{% static 'blog/images/github.svg' %}" width=15 /></a>
+                    </li>
+                </ul>
+                <h2>tech review.</h2>
+                <form method="" action="" class="search-form" >
+                    <input 
+                        type="text"
+                        placeholder="search"
+                    />
+                    <button><i class="fa fa-search" style="font-size: 20px;" ></i></button>
+                </form>
             </div>
-        </nav>
+            <nav>
+                <ul class="nav-links" >
+                    <li>
+                        <a href="{% url 'index' %}">Home</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'trends' %}">Trends</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'blog' %}">Blogs</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'contact' %}">Contact Us</a>
+                    </li>
+                </ul>
+                <!--Responsive Navigation-->
+                <div class="header">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </nav>
+        </div>
         <!--Cover Page-->
         <div class="home">
             <div class="container">
                 <div class="cover-page">
-                    <p class="home-heading">Hello, and welcome to our blog </p>
-                    <p class="home-heading">where we post all about technology, </p>
-                    <p class="home-heading">and the latest trends in market.</p>
+                    <ul class="home-page-blogs">
+                        <li>
+                            <a href="#"><img src="{% static 'blog/images/0.jpg' %}" width=710 /></a>
+                        </li>
+                        <ol>
+                            <li>
+                                <a href="#"><img src="{% static 'blog/images/banner5.jpg' %}" width=293 /></a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="{% static 'blog/images/banner3.jpg' %}" width=293 /></a>
+                            </li>
+                        </ol>
+                        <ol>
+                            <li>
+                                <a href="#"><img src="{% static 'blog/images/banner8.jpg' %}" width=293 /></a>
+                            </li>
+                            <li>
+                                <a href="#"><img src="{% static 'blog/images/banner1.jpg' %}" width=293 /></a>
+                            </li>
+                        </ol>
+                    </ul>
                 </div>
             </div>
         </div>

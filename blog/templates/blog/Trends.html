@@ -5,56 +5,83 @@
     <!--Trends Page-->
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Dev Blog</title>
+        <title>tech review</title>
         <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <Link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css" />
         <link rel="stylesheet" type="text/css" href="{% static 'blog/css/style.css' %}">
     </head>
     <body>
         <!--Navigation-->
-        <nav id="trial">
-            <ul class="nav-links" >
-                <li>
-                    <a href="{% url 'index' %}">Home</a>
-                </li>
-                <li>
-                    <a href="{% url 'trends' %}">Trends</a>
-                </li>
-                <li>
-                    <a href="{% url 'blog' %}">Blogs</a>
-                </li>
-                <li>
-                    <a href="{% url 'contact' %}">Contact Us</a>
-                </li>
-            </ul>
-            <!--Responsive Navigation-->
-            <div class="header">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
+        <div class="navigation">
+            <div class="logo">
+                <ul class="social-links">
+                    <li>
+                        <a href="#"><img src="{% static 'blog/images/instagram.svg' %}" width=15 /></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="{% static 'blog/images/twitter.svg' %}" width=15 /></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="{% static 'blog/images/linkedin.svg' %}" width=15 /></a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="{% static 'blog/images/github.svg' %}" width=15 /></a>
+                    </li>
+                </ul>
+                <h2>tech review.</h2>
+                <form method="" action="" class="search-form" >
+                    <input 
+                        type="text"
+                        placeholder="search"
+                    />
+                    <button><i class="fa fa-search" style="font-size: 20px;" ></i></button>
+                </form>
             </div>
-            <!--End of Responsive Navigation-->
-        </nav>
+            <nav>
+                <ul class="nav-links" >
+                    <li>
+                        <a href="{% url 'index' %}">Home</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'trends' %}">Trends</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'blog' %}">Blogs</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'contact' %}">Contact Us</a>
+                    </li>
+                </ul>
+                <!--Responsive Navigation-->
+                <div class="header">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+            </nav>
+        </div>
         <!--End of Navigation-->
        <div class="container">
             <div class="trends">
-                <div class="row">
+                <h2>Latest Trends In Technology</h2>
+                {% if t %}
+                {% for trend in t %}
                     <div class="column">
-                    {% if t %}
-                    {% for trend in t %}
-                    <div class="trend-container">
-                        <img src="{{trend.thumbnail.url}}" />
-                        <ol>
-                            <p>Cloud Computing</p>
-                            <small>published 3 months ago | George</small>
-                            <h4>You know how hard riding a bike at first is, well, programming is kinda like that. You never know how easy it is till you give it a try.</h4>
-                            <a href="#">Read More</a>
-                        </ol>
+                        <div class="row">
+                            <div class="trend-container">
+                                <img src="{{trend.thumbnail.url}}" />
+                                <ol>
+                                    <p>{{trend.title}}</p>
+                                    <small>published {{trend.created_on}} | {{trend.author}}</small>
+                                    <h4>{{trend.content|slice:":150"}}...</h4>
+                                    <a href="#">Read More</a>
+                                </ol>
+                            </div>
+                        </div>
                     </div>
-                    {% endfor %}
-                    {% endif %}
-                    </div>
-                </div>
+                {% endfor %}
+                {% endif %}
             </div>
        </div>
         <script src="{% static 'blog/js/main.js' %}"></script>
