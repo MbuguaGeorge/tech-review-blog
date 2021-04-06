@@ -82,20 +82,37 @@
                     </form>
                 </div>
                 <div class="blog-post">
+                    <h4>Recent Posts</h4>
+                    <a href="#"><button>Programming</button></a>
+                    <a href="#"><button>CryptoCurrency</button></a>
+                    <a href="#"><button>Blockchain</button></a>
+                    <a href="#"><button>Artificial Intelligence</button></a>
+                    <a href="#"><button>Machine Learning</button></a>
+                    <a href="#"><button>Internet Of Things</button></a>
+                </div>
+                <div class="daily_blog">
                     <ul>
-                        {% if b %}
-                        {% for blog in b %}
                         <li>
-                            <img src="{{blog.thumbnail.url}}" width=95 />
+                            <img alt="programming pics" src="{% static 'blog/images/banner2.jpg' %}" width=280 />
                             <ol>
-                                <p>{{blog.title}}</p>
-                                <small>Published {{blog.created_on}} | {{blog.author}}</small>
-                                <h4>{{blog.content|slice:":200"}}...</h4>
-                                <a href="#"><h5>Read More</h5></a>
+                                <small>George | Published 4 months ago</small>
+                                <h5>One of the most technological advancements ever, is the telephone.</h5>
                             </ol>
                         </li>
-                        {% endfor %}
-                        {% endif %}
+                        <li>
+                            <img alt="programming pics" src="{% static 'blog/images/banner2.jpg' %}" width=280 />
+                            <ol>
+                                <small>George | Published 4 months ago</small>
+                                <h5>One of the most technological advancements ever, is the telephone.</h5>
+                            </ol>
+                        </li>
+                        <li>
+                            <img alt="programming pics" src="{% static 'blog/images/banner2.jpg' %}" width=280 />
+                            <ol>
+                                <small>George | Published 4 months ago</small>
+                                <h5>One of the most technological advancements ever, is the telephone.</h5>
+                            </ol>
+                        </li>
                     </ul>
                 </div>
             </div>

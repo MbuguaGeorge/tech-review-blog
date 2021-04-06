@@ -23,7 +23,7 @@ body {
 
 /* Navigation Style */
 .navigation{
-    min-height: 18vh;
+    min-height: 15vh;
     box-shadow: 0 10px 40px -14px #ddd,
     0 10px 40px -10px #ddd;
 }
@@ -92,8 +92,19 @@ nav li a{
 }
 .cover-page li img{
     border-radius: 5px;
-    opacity: 0.7;
-    
+}
+.cover-page ul li img{
+    filter: brightness(80%);
+}
+.blog__post{
+    position: relative;
+}
+.blog-text h3{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+    position: absolute;
+    left: 20px;
+    bottom: 12px;
 }
 .cover-page ul{
     display: flex;
@@ -187,42 +198,35 @@ textarea{
     color: white;
 }
 .blog-post{
-    padding: 50px;
+    padding: 30px;
     padding-left: 150px;
-    padding-right: 300px;
 }
-.blog-post ul{
-    list-style: none;
-}
-.blog-post li{
-    padding: 20px;
-    display: flex;
-}
-.blog-post li img{
-    border-radius: 2px;
-}
-.blog-post li p{
-    padding-left: 15px;
+.blog-post h4{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 1.2rem;
     font-weight: 700;
 }
-.blog-post li ol small{
+.blog-post button{
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: transparent;
+    padding: 7px 8px;
+    color: black;
+    border: 1px green solid;
+}
+.daily_blog{
+    padding-left: 150px;
+}
+.daily_blog ul li{
+    list-style: none;
+}
+.daily_blog li small{
     color: #ddd;
-    padding-left: 15px;
 }
-.blog-post li ol h4{
+.daily_blog ul li h5{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    padding-left: 15px;
-    padding-top: 3px;
-    font-size: 0.9rem;
 }
-.blog-post li ol h5{
-    padding-left: 15px;
-    color: blue;
-}
-.blog-post li ol a{
-    text-decoration: none;
+.daily_blog ul{
+    display: flex;
 }
 .header{
     display: none;
