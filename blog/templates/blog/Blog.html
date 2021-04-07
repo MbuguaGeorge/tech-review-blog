@@ -17,13 +17,13 @@
             <div class="logo">
                 <ul class="social-links">
                     <li>
-                        <a href="#"><img src="{% static 'blog/images/instagram.svg' %}" width=15 /></a>
+                        <a href="#"><img src="{% static 'blog/images/instagram.png' %}" width=15 /></a>
                     </li>
                     <li>
-                        <a href="#"><img src="{% static 'blog/images/twitter.svg' %}" width=15 /></a>
+                        <a href="#"><img src="{% static 'blog/images/twitter.png' %}" width=15 /></a>
                     </li>
                     <li>
-                        <a href="#"><img src="{% static 'blog/images/linkedin.svg' %}" width=15 /></a>
+                        <a href="#"><img src="{% static 'blog/images/linkedin.png' %}" width=15 /></a>
                     </li>
                     <li>
                         <a href="#"><img src="{% static 'blog/images/github.svg' %}" width=15 /></a>
@@ -33,11 +33,12 @@
                 <form method="" action="" class="search-form" >
                     <input 
                         type="text"
-                        placeholder="search"
+                        placeholder="Search..."
                     />
                     <button><i class="fa fa-search" style="font-size: 20px;" ></i></button>
                 </form>
             </div>
+            <hr />
             <nav>
                 <ul class="nav-links" >
                     <li>
@@ -63,8 +64,8 @@
         </div>
         <!--End Navigation-->
         <!--Main Blog Page-->
-        <section class="blog-page">
-            <div class="container">
+        <div class="container">
+            <div class="blog-page">
                 <div class="blog">
                     <h2>DevBlog - A Blog Made For Technology Lovers</h2>
                     <p>Welcome to my blog. Subscribe and get my latest blog posts direct to your email.</p>
@@ -90,33 +91,29 @@
                     <a href="#"><button>Machine Learning</button></a>
                     <a href="#"><button>Internet Of Things</button></a>
                 </div>
-                <div class="daily_blog">
-                    <ul>
-                        <li>
-                            <img alt="programming pics" src="{% static 'blog/images/banner2.jpg' %}" width=280 />
-                            <ol>
-                                <small>George | Published 4 months ago</small>
-                                <h5>One of the most technological advancements ever, is the telephone.</h5>
-                            </ol>
-                        </li>
-                        <li>
-                            <img alt="programming pics" src="{% static 'blog/images/banner2.jpg' %}" width=280 />
-                            <ol>
-                                <small>George | Published 4 months ago</small>
-                                <h5>One of the most technological advancements ever, is the telephone.</h5>
-                            </ol>
-                        </li>
-                        <li>
-                            <img alt="programming pics" src="{% static 'blog/images/banner2.jpg' %}" width=280 />
-                            <ol>
-                                <small>George | Published 4 months ago</small>
-                                <h5>One of the most technological advancements ever, is the telephone.</h5>
-                            </ol>
-                        </li>
-                    </ul>
+                <div class="container">
+                    <div class="daily_blog">
+                        {% if b %}
+                        {% for blog in b %}
+                        <div class="column">
+                            <div class="row">
+                                <div class="blog__container">
+                                    <img alt="blog" src="{{blog.thumbnail.url}}" />
+                                    <ol>
+                                        <h4>{{blog.title}}</h4>
+                                        <small>{{blog.author}} - {{blog.created_on}}</small>
+                                        <p>{{ blog.content | slice:":140"}}...</p>
+                                        <a href="{% url 'blog_post' blog.slug %}"><h5>Read more</h5></a>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {% endif %}
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
         <!--End of Blog Page-->
         <script src="{% static 'blog/js/main.js' %}"></script>
     </body>

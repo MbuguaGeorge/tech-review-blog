@@ -2,7 +2,6 @@
 
 <!DOCTYPE html>
 <html>
-    <!--Trends Page-->
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>tech review</title>
@@ -12,7 +11,6 @@
         <link rel="stylesheet" type="text/css" href="{% static 'blog/css/style.css' %}">
     </head>
     <body>
-        <!--Navigation-->
         <div class="navigation">
             <div class="logo">
                 <ul class="social-links">
@@ -35,7 +33,7 @@
                         type="text"
                         placeholder="Search..."
                     />
-                    <button><i class="fa fa-search" style="font-size: 20px;" ></i></button>
+                    <button><i class="fa fa-search"></i></button>
                 </form>
             </div>
             <hr />
@@ -62,29 +60,18 @@
                 </div>
             </nav>
         </div>
-        <!--End of Navigation-->
-       <div class="container">
-            <div class="trends">
-                <h2>Latest Trends In Technology</h2>
-                {% if t %}
-                {% for trend in t %}
-                    <div class="column">
-                        <div class="row">
-                            <div class="trend-container">
-                                <img src="{{trend.thumbnail.url}}" />
-                                <ol>
-                                    <p>{{trend.title}}</p>
-                                    <small>published {{trend.created_on}} | {{trend.author}}</small>
-                                    <h4>{{trend.content|slice:":150"}}...</h4>
-                                    <a href="#">Read More</a>
-                                </ol>
-                            </div>
-                        </div>
-                    </div>
-                {% endfor %}
-                {% endif %}
+        <div class="container">
+            {% if post %}
+            <div class="post">
+                <ol>
+                    <img src="{{post.thumbnail.url}}"/>
+                    <h3>{{post.title}}</h3>
+                    <small>{{post.author}} - {{post.created_on}}</small>
+                    <p>{{post.content}}</p>
+                </ol>
             </div>
-       </div>
+            {% endif %}
+        </div>
         <script src="{% static 'blog/js/main.js' %}"></script>
     </body>
 </html>

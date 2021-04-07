@@ -35,6 +35,7 @@ nav{
 
     width: 100%;
     overflow: hidden;
+    padding-bottom: 20px;
 }
 nav ul{
     display: flex;
@@ -75,11 +76,22 @@ nav li a{
     width: 8%;
 }
 .logo form input[type="text"]{
-    border-radius: 1px;
+    border-radius: 20px;
     padding-left: 10px;
-    height: 4vh;
+    height: 6vh;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border: 1px #ddd solid;
+}
+
+.logo form button{
+    border-radius: 20px;
+    padding: 7px 7px;
+    background-color: #111;
+    color: white;
     border: 1px #111 solid;
+    font-size: 12px;
+    width: 50px;
+    cursor: pointer;
 }
 /* End of Navigation Style */
 .home{
@@ -94,17 +106,25 @@ nav li a{
     border-radius: 5px;
 }
 .cover-page ul li img{
-    filter: brightness(80%);
+    filter: brightness(70%);
 }
 .blog__post{
     position: relative;
 }
-.blog-text h3{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: white;
+.blog-text ol{
     position: absolute;
     left: 20px;
     bottom: 12px;
+}
+.blog-text ol h3{
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.5rem;
+}
+.blog-text ol small{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: lightgray;
+    font-size: 1.2rem;
 }
 .cover-page ul{
     display: flex;
@@ -201,6 +221,9 @@ textarea{
     padding: 30px;
     padding-left: 150px;
 }
+.blog-page{
+    padding-bottom: 50px;
+}
 .blog-post h4{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: 700;
@@ -216,26 +239,71 @@ textarea{
 .daily_blog{
     padding-left: 150px;
 }
-.daily_blog ul li{
-    list-style: none;
+.blog__container{
+    box-sizing: border-box;
 }
-.daily_blog li small{
-    color: #ddd;
+.blog__container .column{
+    display: inline-flex;
 }
-.daily_blog ul li h5{
+.blog__container ol{
+    width: 280px;
+    padding: 8px;
+}
+.blog__container img{
+    width: 300px;
+    border-radius: 5px;
+}
+.blog__container a{
+    text-decoration: none;
+}
+hr{
+    margin-right: 150px;
+    margin-left: 150px;
+}
+.blog__container ol h4{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 700;
 }
-.daily_blog ul{
-    display: flex;
-}
-.header{
-    display: none;
-}
-.header div{
-    width: 25px;
-    height: 5px;
+.blog__container ol small{
+    margin-top: 10px;
+    margin-left: 15px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: #ddd;
-    margin: 5px;
+}
+.blog__container ol p{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.2rem;
+    font-weight: 200;
+    margin-top: 10px;
+}
+.post{
+    padding-top: 50px;
+    padding-left: 120px;
+    padding-bottom: 100px;
+}
+.post ol{
+    width: 650px;
+}
+.post ol img{
+    border-radius: 3px;
+    width: 700px;
+}
+.post ol h3{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    padding-top: 50px;
+    padding-bottom: 10px;
+}
+.post ol small{
+    padding: 20px;
+    color: #ddd;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.2rem;
+}
+.post ol p{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding-top: 20px;
 }
 /* Trends */
 .trends{
@@ -284,153 +352,3 @@ textarea{
     font-weight: 700;
     margin-bottom: 50px;
 }
-/* Responsive */
-
-@media only screen and (max-width:1024px){
-    nav ul{
-        width: 100%;
-    }
-    nav{
-        position: static;
-    }
-}
-
-@media only screen and (max-width:880px){
-    nav ul{
-        position: absolute;
-        left: 0px;
-        height: 30vh;
-        top: 8vh;
-        background-color: black;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        transform: translateX(100%);
-        transition: transform 0.5s ease-in;
-    }
-    nav{
-        display: flex;
-        justify-content: left;
-        padding-left: 20px;
-    }
-    .header{
-        display: block;
-        cursor: pointer;
-    }
-    .header div{
-        background-color: #ddd;
-        width: 25px;
-        height: 3px;
-        margin: 5px;
-        transition: all 0.3s ease;
-    }
-}
-.nav-active{
-    transform: translateX(0%);
-}
-@keyframes navLinkFade{
-    from{
-        opacity: 0;
-        transform: translateX(50px);
-    }
-    to{
-        opacity: 1;
-        transform: translateX(0px);
-    }
-}
-.toggle .line1{
-    transform: rotate(-45deg) translate(-5px, 6px);
-}
-.toggle .line2{
-    opacity: 0;
-}
-.toggle .line3{
-    transform: rotate(45deg) translate(-5px, -6px);
-}
-
-@media only screen and (max-width:880px){
-    .trends h2{
-        margin-left: 0;
-    }
-    .trends li img{
-        margin-left: 0;
-        width: 300px;
-        margin-left: 17px;
-    }
-    .trends li{
-        display: block;
-        align-items: center;
-    }
-    .trends ul{
-        margin-right: 0;
-        margin-left: 0;
-    }
-    hr{
-        margin-right: 40px;
-        margin-left: 40px;
-    }
-    .trends ol{
-        margin-left: 0;
-    }
-    .mini-trends li img{
-        width: 300px;
-    }
-    .mini-trends ul{
-        display: block;
-        margin-left: 0;
-        margin-left: 15px;
-        margin-right: 0;
-    }
-    .trend-page{
-        margin-right: 0;
-    }
-    .mini-trends hr{
-        display: block;
-        margin-right: 0;
-        margin-left: 0;
-        margin-bottom: 30px;
-        margin-top: 30px;
-    }
-    .blog-post{
-        padding-left: 0;
-        padding-right: 0;
-        padding: 0;
-    }
-    .blog-post li{
-        margin-right: 0;
-    }
-}
-
-/* Footer */
-
-@media only screen and (max-width:880px){
-    .footer-centre,
-    .footer-left,
-    .footer-right,
-    .footer-search{
-        display: block;
-        text-align: center;
-        flex-direction: column;
-        
-    }
-    .footer-left{
-        margin-left: 0;
-        margin-right: 0;
-    }
-    .footer-center{
-        margin-right: 0;
-    }
-    .footer-right{
-        margin-top: 0;
-        margin-left: 0;
-    }
-    .footer-search{
-        margin-top: 0;
-        padding: 0;
-        padding: 30px;
-    }
-    .main-part{
-        display: block;
-    }
-}
-/* End of Responsive Style*/

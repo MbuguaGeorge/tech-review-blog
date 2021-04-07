@@ -21,3 +21,10 @@ def trends(request):
         't' : t,
     }
     return render(request, 'blog/Trends.html', context)
+
+def blogpost(request, slug):
+    post = Blog.objects.filter(pk=slug).first()
+    context = {
+        'post' : post,
+    }
+    return render(request, 'blog/blogpost.html',context)
