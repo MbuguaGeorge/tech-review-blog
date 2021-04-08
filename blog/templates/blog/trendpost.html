@@ -2,7 +2,6 @@
 
 <!DOCTYPE html>
 <html>
-    <!--Blog Page-->
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>tech review</title>
@@ -12,7 +11,6 @@
         <link rel="stylesheet" type="text/css" href="{% static 'blog/css/style.css' %}">
     </head>
     <body>
-        <!--Navigation-->
         <div class="navigation">
             <div class="logo">
                 <ul class="social-links">
@@ -33,7 +31,7 @@
                 <form method="" action="" class="search-form" >
                     <input 
                         type="text"
-                        placeholder="Search.."
+                        placeholder="Search..."
                     />
                     <button><i class="fa fa-search"></i></button>
                 </form>
@@ -62,59 +60,59 @@
                 </div>
             </nav>
         </div>
-        <!--End Navigation-->
-        <!--Main Blog Page-->
         <div class="container">
-            <div class="blog-page">
-                <div class="blog">
-                    <h2>DevBlog - A Blog Made For Technology Lovers</h2>
-                    <p>Welcome to my blog. Subscribe and get my latest blog posts direct to your email.</p>
-                    <form>
-                        <input 
-                            type="text"
-                            name="email"
-                            placeholder="Enter email"
-                        />
-                        <input 
-                            type="submit"
-                            value="Subscribe"
-                            class="btn"
-                        />
-                    </form>
-                </div>
-                <div class="blog-post">
-                    <h4>Recent Posts</h4>
-                    <a href="#"><button>Programming</button></a>
-                    <a href="#"><button>CryptoCurrency</button></a>
-                    <a href="#"><button>Blockchain</button></a>
-                    <a href="#"><button>Artificial Intelligence</button></a>
-                    <a href="#"><button>Machine Learning</button></a>
-                    <a href="#"><button>Internet Of Things</button></a>
-                </div>
-                <div class="container">
-                    <div class="daily_blog">
-                        {% if b %}
-                        {% for blog in b %}
-                        <div class="column">
-                            <div class="row">
-                                <div class="blog__container">
-                                    <img alt="blog" src="{{blog.thumbnail.url}}" />
-                                    <ol>
-                                        <h4>{{blog.title}}</h4>
-                                        <small>{{blog.author}} - {{blog.created_on}}</small>
-                                        <p>{{ blog.content | slice:":140"}}...</p>
-                                        <a href="{% url 'blog_post' blog.slug %}"><h5>Read more</h5></a>
-                                    </ol>
-                                </div>
-                            </div>
-                        </div>
-                        {% endfor %}
-                        {% endif %}
-                    </div>
-                </div>
+            {% if trendy %}
+            <div class="post">
+                <ol>
+                    <img alt="banner" src="{{trendy.thumbnail.url}}"/>
+                    <h3>{{trendy.title}}</h3>
+                    <small>{{trendy.author}} - {{trendy.created_on}}</small>
+                    <p>{{trendy.content}}</p>
+                </ol>
+            </div>
+            {% endif %}
+            <div class="side__bar">
+                <h2>Popular Posts</h2>
+                <ul>
+                    <li>
+                        <ol>
+                            <h5>01</h5>
+                        </ol>
+                        <a href="#">
+                            <h4>How Machine Learning is Changing The Tech World.</h4>
+                            <small>George | Nov 03, 2021</small>
+                        </a>
+                    </li>
+                    <li>
+                        <ol>
+                            <h5>02</h5>
+                        </ol>
+                        <a href="#">
+                            <h4>The AI magically removes moving objects from videos.</h4>
+                            <small>George | Nov 03, 2021</small>
+                        </a>
+                    </li>
+                    <li>
+                        <ol>
+                            <h5>03</h5>
+                        </ol>
+                        <a href="#">
+                            <h4>How Machine Learning is Changing The Tech World.</h4>
+                            <small>George | Nov 03, 2021</small>
+                        </a>
+                    </li>
+                    <li>
+                        <ol>
+                            <h5>04</h5>
+                        </ol>
+                        <a href="#">
+                            <h4>How Machine Learning is Changing The Tech World.</h4>
+                            <small>George | Nov 03, 2021</small>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </div>
-        <!--End of Blog Page-->
         <script src="{% static 'blog/js/main.js' %}"></script>
     </body>
 </html>

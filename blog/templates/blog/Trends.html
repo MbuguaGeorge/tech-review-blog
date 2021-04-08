@@ -35,7 +35,7 @@
                         type="text"
                         placeholder="Search..."
                     />
-                    <button><i class="fa fa-search" style="font-size: 20px;" ></i></button>
+                    <button><i class="fa fa-search"></i></button>
                 </form>
             </div>
             <hr />
@@ -76,7 +76,7 @@
                                     <p>{{trend.title}}</p>
                                     <small>published {{trend.created_on}} | {{trend.author}}</small>
                                     <h4>{{trend.content|slice:":150"}}...</h4>
-                                    <a href="#">Read More</a>
+                                    <a href="{% url 'trendpost' trend.slug %}">Read More</a>
                                 </ol>
                             </div>
                         </div>

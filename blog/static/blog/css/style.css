@@ -85,7 +85,7 @@ nav li a{
 
 .logo form button{
     border-radius: 20px;
-    padding: 7px 7px;
+    padding: 9px 9px;
     background-color: #111;
     color: white;
     border: 1px #111 solid;
@@ -249,6 +249,9 @@ textarea{
     width: 280px;
     padding: 8px;
 }
+.blog__container ol p:hover{
+    color: #e3a102;
+}
 .blog__container img{
     width: 300px;
     border-radius: 5px;
@@ -280,6 +283,7 @@ hr{
     padding-top: 50px;
     padding-left: 120px;
     padding-bottom: 100px;
+    float: left;
 }
 .post ol{
     width: 650px;
@@ -351,4 +355,40 @@ hr{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: 700;
     margin-bottom: 50px;
+}
+.side__bar{
+    float: right;
+    padding-top: 50px;
+    padding-right: 50px;
+    width: 300px;
+}
+.side__bar h2{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-bottom: 50px;
+}
+.side__bar ul li{
+    list-style: none;
+    display: flex;
+    margin-bottom: 20px;
+}
+.side__bar ol{
+    margin-right: 8px;
+    font-size: 1.5rem;
+    color: #ddd;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.side__bar ul li a{
+    text-decoration: none;
+}
+.side__bar ul li a h4{
+    color: #111;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+.side__bar ul li a small{
+    color: #ddd;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 20px;
 }

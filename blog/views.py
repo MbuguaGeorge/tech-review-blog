@@ -16,7 +16,7 @@ def contact(request):
     return render(request, 'blog/contact.html')
 
 def trends(request):
-    t = Trend.objects.all()
+    t = Trend.objects.filter(status=1).order_by('-created_on')
     context = {
         't' : t,
     }
@@ -28,3 +28,10 @@ def blogpost(request, slug):
         'post' : post,
     }
     return render(request, 'blog/blogpost.html',context)
+
+def trendpost(request, slug):
+    trendy = Trend.objects.filter(pk=slug).first()
+    context = {
+        'trendy' : trendy,
+    }
+    return render(request, 'blog/trendpost.html',context)

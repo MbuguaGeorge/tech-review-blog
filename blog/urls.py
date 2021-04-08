@@ -7,11 +7,12 @@ from . import views
 name = 'blog'
 
 urlpatterns = [
+    path('trends/<slug:slug>/',views.trendpost, name = 'trendpost'),
     path('home',views.index, name = 'index'),
     path('blog',views.blog, name = 'blog'),
     path('contact',views.contact, name = 'contact'),
     path('trends',views.trends, name = 'trends'),
-    path('<slug:slug>/',views.blogpost, name = 'blog_post'),
+    path('blog/<slug:slug>/',views.blogpost, name = 'blog_post'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
