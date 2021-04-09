@@ -6,12 +6,12 @@ STATUS = (
     (0, "Draft"),
     (1, "Publish")
 )
-PROGRAMMING = 'PR'
-CRYPTOCURRENCY = 'CC'
-BLOCKCHAIN = 'BC'
-AI = 'AI'
-IOT = 'IOT'
-ML = 'ML'
+PROGRAMMING = 'Programming'
+CRYPTOCURRENCY = 'Cryptocurrency'
+BLOCKCHAIN = 'Blockchain'
+AI = 'Artificial Intelligence'
+IOT = 'Internet of Things'
+ML = 'Machine Learning'
 CATEGORY = (
     (PROGRAMMING,'Programming'),
     (CRYPTOCURRENCY,'Cryptocurrency'),
@@ -30,7 +30,7 @@ class Blog(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     thumbnail = models.ImageField(blank=False)
     author = models.ForeignKey(User, on_delete=models.CASCADE,null=True)
-    category = models.CharField(choices=CATEGORY,max_length=3,default=PROGRAMMING,null=False)
+    category = models.CharField(choices=CATEGORY,max_length=50,default=PROGRAMMING,null=False)
     class Meta:
         ordering = ['-created_on']
 
@@ -46,7 +46,7 @@ class Trend(models.Model):
     thumbnail = models.ImageField(blank=False)
     author = models.ForeignKey(User, on_delete=models.CASCADE,null=True)
     status = models.IntegerField(choices=STATUS,default=0)
-    category = models.CharField(max_length=3,choices=CATEGORY,default=CRYPTOCURRENCY,null=False)
+    category = models.CharField(max_length=50,choices=CATEGORY,default=CRYPTOCURRENCY,null=False)
 
     class Meta:
         ordering = ['-created_on']

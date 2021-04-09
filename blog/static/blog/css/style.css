@@ -123,11 +123,17 @@ nav li a{
 .cover-page{
     margin: 100px;
 }
-.cover-page ul li{
-    list-style: none;
+.cover-page ul li a{
     display: flex;
+    text-decoration: none;
     width: 900px;
     padding: 30px;
+}
+.cover-page ul li a:hover{
+    opacity: 0.7;
+}
+.cover-page ul li{
+    list-style: none;
 }
 .cover-page ol button{
     padding: 2px 2px;
@@ -149,9 +155,11 @@ nav li a{
 .cover-page ol h3{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: 600;
+    color: #111;
 }
 .cover-page ol p{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #111;
 }
 .cover-page ol small{
     color: #1c1c1c;
@@ -291,22 +299,6 @@ textarea{
 hr{
     margin-right: 150px;
     margin-left: 150px;
-}
-.blog__container ol h4{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-weight: 700;
-}
-.blog__container ol small{
-    margin-top: 10px;
-    margin-left: 15px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    color: #ddd;
-}
-.blog__container ol p{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 1.2rem;
-    font-weight: 200;
-    margin-top: 10px;
 }
 .post__container{
     padding-top: 50px;

@@ -45,7 +45,7 @@
                         <a href="{% url 'index' %}">Home</a>
                     </li>
                     <li>
-                        <a href="{% url 'trends' %}">Trends</a>
+                        <a href="#">Trends</a>
                     </li>
                     <li>
                         <a href="{% url 'blog' %}">Blogs</a>
@@ -92,18 +92,18 @@
                     <a href="#"><button>Internet Of Things</button></a>
                 </div>
                 <div class="container">
-                    <div class="daily_blog">
+                    <div class="trends">
                         {% if b %}
                         {% for blog in b %}
                         <div class="column">
                             <div class="row">
-                                <div class="blog__container">
+                                <div class="trend-container">
                                     <img alt="blog" src="{{blog.thumbnail.url}}" />
                                     <ol>
-                                        <h4>{{blog.title}}</h4>
+                                        <p>{{blog.title}}</p>
                                         <small>{{blog.author}} - {{blog.created_on}}</small>
-                                        <p>{{ blog.content | slice:":140"}}...</p>
-                                        <a href="{% url 'blog_post' blog.slug %}"><h5>Read more</h5></a>
+                                        <h4>{{ blog.content | slice:":140"}}...</h4>
+                                        <a href="{% url 'blog_post' blog.slug %}">Read more</a>
                                     </ol>
                                 </div>
                             </div>

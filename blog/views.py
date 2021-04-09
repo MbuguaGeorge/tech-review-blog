@@ -2,8 +2,6 @@ from django.shortcuts import render
 from .models import Blog,Trend
 
 # Create your views here.
-def index(request):
-    return render(request, 'blog/index.html')
 
 def blog(request):  
     b = Blog.objects.filter(status=1).order_by('-created_on')
@@ -15,12 +13,12 @@ def blog(request):
 def contact(request):
     return render(request, 'blog/contact.html')
 
-def trends(request):
+def index(request):
     t = Trend.objects.filter(status=1).order_by('-created_on')
     context = {
         't' : t,
     }
-    return render(request, 'blog/Trends.html', context)
+    return render(request, 'blog/index.html', context)
 
 def blogpost(request, slug):
     post = Blog.objects.filter(pk=slug).first()

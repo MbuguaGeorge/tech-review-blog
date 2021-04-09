@@ -46,7 +46,7 @@
                         <a href="{% url 'index' %}">Home</a>
                     </li>
                     <li>
-                        <a href="{% url 'trends' %}">Trends</a>
+                        <a href="#">Trends</a>
                     </li>
                     <li>
                         <a href="{% url 'blog' %}">Blogs</a>
@@ -75,30 +75,20 @@
                 <div class="cover-page">
                     <h2>Latest Trends In Technology</h2>
                     <ul>
+                        {% if t %}
+                        {% for trend in t %}
                         <li>
-                            <img src="{% static 'blog/images/0.jpg' %}"/>
-                            <ol>
-                                <small><button>Artificial Intelligence</button> July 20,2020</small>
-                                <h3>AI magically removes moving objects from videos.</h3>
-                                <p>Recoil is an experimental state management library for React apps. It provides several capabilities that are difficult to achieve with React alone, while being compatible with the newest features</p>
-                            </ol>
+                            <a href="{% url 'trendpost' trend.slug %}">
+                                <img src="{{trend.thumbnail.url}}"/>
+                                <ol>
+                                    <small><button>{{trend.category}}</button> {{trend.created_on}}</small>
+                                    <h3>{{trend.title}}</h3>
+                                    <p>{{trend.content|slice:":200"}}...</p>
+                                </ol>
+                            </a>
                         </li>
-                        <li>
-                            <img src="{% static 'blog/images/banner2.jpg' %}"/>
-                            <ol>
-                                <small><button>Machine Learning</button> July 20,2020</small>
-                                <h3>AI magically removes moving objects from videos.</h3>
-                                <p>Recoil is an experimental state management library for React apps. It provides several capabilities that are difficult to achieve with React alone, while being compatible with the newest features</p>
-                            </ol>
-                        </li>
-                        <li>
-                            <img src="{% static 'blog/images/banner5.jpg' %}"/>
-                            <ol>
-                                <small><button>Internet of Things </button> July 20,2020</small>
-                                <h3>AI magically removes moving objects from videos.</h3>
-                                <p>Recoil is an experimental state management library for React apps. It provides several capabilities that are difficult to achieve with React alone, while being compatible with the newest features</p>
-                            </ol>
-                        </li>
+                        {% endfor %}
+                        {% endif %}
                     </ul>
                 </div>
             </div>
