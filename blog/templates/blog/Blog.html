@@ -15,32 +15,36 @@
         <!--Navigation-->
         <div class="navigation">
             <div class="logo">
+                <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                    <i class="fa fa-bars"></i>
+                  </a>
                 <ul class="social-links">
                     <li>
                         <a href="#"><img src="{% static 'blog/images/instagram.png' %}" width=15 /></a>
                     </li>
                     <li>
-                        <a href="#"><img src="{% static 'blog/images/twitter.png' %}" width=15 /></a>
+                        <a href="https://twitter.com/_Mbugua__"><img src="{% static 'blog/images/twitter.png' %}" width=15 /></a>
                     </li>
                     <li>
-                        <a href="#"><img src="{% static 'blog/images/linkedin.png' %}" width=15 /></a>
+                        <a href="https://www.linkedin.com/in/george-mbugua-a03b531a7/"><img src="{% static 'blog/images/linkedin.png' %}" width=15 /></a>
                     </li>
                     <li>
-                        <a href="#"><img src="{% static 'blog/images/github.svg' %}" width=15 /></a>
+                        <a href="https://github.com/MbuguaGeorge"><img src="{% static 'blog/images/github.svg' %}" width=15 /></a>
                     </li>
                 </ul>
                 <h2>tech review.</h2>
-                <form method="" action="" class="search-form" >
+                <form method="" action="" class="search-form">
                     <input 
+                        name="q"
                         type="text"
-                        placeholder="Search.."
+                        placeholder="Search..."
                     />
-                    <button><i class="fa fa-search"></i></button>
+                    <button onClick="search()"><i class="fa fa-search"></i></button>
                 </form>
             </div>
             <hr />
             <nav>
-                <ul class="nav-links" >
+                <ul id="nav-links" >
                     <li>
                         <a href="{% url 'index' %}">Home</a>
                     </li>
@@ -54,12 +58,21 @@
                         <a href="{% url 'contact' %}">Contact Us</a>
                     </li>
                 </ul>
+                <ul id="social">
+                    <li>
+                        <a href="#"><i class="fa fa-instagram" ></i></a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/_Mbugua__"><i class="fa fa-twitter" ></i></a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/george-mbugua-a03b531a7/"><i class="fa fa-linkedin" ></i></a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/MbuguaGeorge"><i class="fa fa-github" ></i></a>
+                    </li>
+                </ul>
                 <!--Responsive Navigation-->
-                <div class="header">
-                    <div class="line1"></div>
-                    <div class="line2"></div>
-                    <div class="line3"></div>
-                </div>
             </nav>
         </div>
         <!--End Navigation-->
