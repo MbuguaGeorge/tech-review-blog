@@ -39,7 +39,7 @@
                         type="text"
                         placeholder="Search..."
                     />
-                    <button onClick="search()"><i class="fa fa-search"></i></button>
+                    <button><i class="fa fa-search"></i></button>
                 </form>
             </div>
             <hr />
@@ -86,7 +86,7 @@
             <div class="container">
                 <div class="cover-page">
                     <h2>Latest Trends In Technology</h2>
-                    <ul>
+                    <ul id="myUL">
                         {% if t %}
                         {% for trend in t %}
                         <li>
