@@ -49,10 +49,10 @@
                         <a href="{% url 'index' %}">Home</a>
                     </li>
                     <li>
-                        <a href="#">Trends</a>
+                        <a href="{% url 'blog' %}">Blogs</a>
                     </li>
                     <li>
-                        <a href="{% url 'blog' %}">Blogs</a>
+                        <a href="{% url 'about' %}">About</a>
                     </li>
                     <li>
                         <a href="{% url 'contact' %}">Contact Us</a>
@@ -113,9 +113,9 @@
                                 <div class="trend-container">
                                     <img alt="blog" src="{{blog.thumbnail.url}}" />
                                     <ol>
-                                        <p>{{blog.title}}</p>
+                                        <h4>{{blog.title}}</h4>
                                         <small>{{blog.author}} - {{blog.created_on}}</small>
-                                        <h4>{{ blog.content | slice:":140"}}...</h4>
+                                        <p>{{ blog.content|safe|slice:":140"}}</p>
                                         <a href="{% url 'blog_post' blog.slug %}">Read more</a>
                                     </ol>
                                 </div>

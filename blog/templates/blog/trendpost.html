@@ -47,10 +47,10 @@
                         <a href="{% url 'index' %}">Home</a>
                     </li>
                     <li>
-                        <a href="#">Trends</a>
+                        <a href="{% url 'blog' %}">Blogs</a>
                     </li>
                     <li>
-                        <a href="{% url 'blog' %}">Blogs</a>
+                        <a href="{% url 'about' %}">About</a>
                     </li>
                     <li>
                         <a href="{% url 'contact' %}">Contact Us</a>
@@ -81,7 +81,7 @@
                     <ol>
                         <h3>{{trendy.title}}</h3>
                         <small>{{trendy.author}} - {{trendy.created_on}}</small>
-                        <p>{{trendy.content}}</p>
+                        <p>{{trendy.content|safe}}</p>
                     </ol>
                 </div>
                 {% endif %}

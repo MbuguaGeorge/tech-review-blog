@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 <html>
-    <!--Home Page-->
+    <!--Contact Page-->
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>tech review</title>
@@ -11,7 +11,7 @@
         <Link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css" />
         <link rel="stylesheet" type="text/css" href="{% static 'blog/css/style.css' %}">
     </head>
-    <body data-hijacking="off" data-animation="none">
+    <body>
         <!--Navigation-->
         <div class="navigation">
             <div class="logo">
@@ -39,7 +39,7 @@
                         type="text"
                         placeholder="Search..."
                     />
-                    <button><i class="fa fa-search"></i></button>
+                    <button onClick="search()"><i class="fa fa-search"></i></button>
                 </form>
             </div>
             <hr />
@@ -75,37 +75,16 @@
                 <!--Responsive Navigation-->
             </nav>
         </div>
-        <!--Cover Page-->
-        <div class="recent__blogs">
-            <div class="recent__blog__text">
-                <h2>tech review.</h2> 
-                <p>We Bring You The Latest News In The World Of Technology</p>
-            </div>  
-        </div>
-        <div class="home">
-            <div class="container">
-                <div class="cover-page">
-                    <h2>Latest Trends In Technology</h2>
-                    <ul id="myUL">
-                        {% if t %}
-                        {% for trend in t %}
-                        <li>
-                            <a href="{% url 'trendpost' trend.slug %}">
-                                <img src="{{trend.thumbnail.url}}"/>
-                                <ol>
-                                    <small><button>{{trend.category}}</button> {{trend.created_on}}</small>
-                                    <h3>{{trend.title}}</h3>
-                                    <p>{{trend.content|safe|slice:":200"}}...</p>
-                                </ol>
-                            </a>
-                        </li>
-                        {% endfor %}
-                        {% endif %}
-                    </ul>
+        <!--End Navigation-->
+        <!--End of Contact Form-->
+        <section class="container">
+            <div class="about_us">
+                <div class="about_page">
+                    <h1>About us</h1>
+                    <p>Just a bunch of techies doing what they do best.</p>
                 </div>
             </div>
-        </div>
-        <!--Javascript files-->
+        </section>
         <script src="{% static 'blog/js/main.js' %}"></script>
     </body>
 </html>

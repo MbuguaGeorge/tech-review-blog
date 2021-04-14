@@ -33,3 +33,6 @@ def trendpost(request, slug):
         'trendy' : trendy,
     }
     return render(request, 'blog/trendpost.html',context)
+
+def About(request):
+    return render(request, 'blog/About.html')
