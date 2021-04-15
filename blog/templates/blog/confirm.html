@@ -1,0 +1,19 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>tech review</title>
+    </head>
+    <body>
+        {% if email %}
+        <p>{{email}} has been {{action}} </p>
+        <form method="post" >
+            <input 
+                type='text'
+                value="text"
+            />
+        </form>
+        {% endif %}
+    </body>
+</html>

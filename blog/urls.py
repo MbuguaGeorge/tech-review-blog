@@ -13,6 +13,7 @@ urlpatterns = [
     path('home',views.index, name = 'index'),
     path('blog/<slug:slug>/',views.blogpost, name = 'blog_post'),
     path('about',views.About, name='about'),
+    path('', views.Confirm, name='confirm'),
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

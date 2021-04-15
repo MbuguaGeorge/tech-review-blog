@@ -59,14 +59,23 @@ def blog(request):
             from_email=settings.FROM_EMAIL,
             to_emails=sub.email,
             subject='Newsletter Confirmation',
-            html_content='Thank you for signing up for my email newsletter! \
+            html_content='Thank you for subscribing to my email newsletter! \
                 Please complete the process by \
                 <a href="{}/confirm/?email={}&confirmation_number={}"> clicking here to \
-                confirm your registration </a>.'.format(request.build_absolute_uri('/confirm/'),
+                confirm your registration </a>.'.format(request.build_absolute_uri('confirm'),
                 sub.email,
                 sub.confirmation_number))
         sg = SendGridAPIClient(settings.SENDGRID_API_KEY)
         response = sg.send(message)
-        return render(request, 'blog/Blog.html', {'email':sub.email, 'b' : b, 'form' : SubscriberForm()})
+        return render(request, 'blog/Blog.html', {'email':sub.email, 'action' : 'added', 'b' : b, 'form' : SubscriberForm()})
     else:
         return render(request, 'blog/Blog.html', {'b' : b,'form': SubscriberForm()})
+
+def Confirm(request):
+    sub = Newsletter.objects.get(email=request.Get['email'])
+    if sub.confirmation_number == request.GET['confirmation_number']:
+        sub.confirmed = True
+        sub.save()
+        return render(request, 'blog/index.html', {'email':sub.email, 'action':'confirmed'})
+    else:
+        return render(request, 'blog/index.html', {'email':sub.email, 'action':'denied'})
