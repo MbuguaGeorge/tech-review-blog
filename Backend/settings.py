@@ -127,3 +127,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# API keys to handle subscription
+
+FROM_EMAIL = 'mburug027@gmail.com'
+SENDGRID_API_KEY = os.environ.get('SENDGRID_API_KEY')

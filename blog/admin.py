@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Blog, Trend
+from .models import Blog, Trend, Message, Newsletter
 
 class BlogAdmin(admin.ModelAdmin):
     list_display = ('title', 'author', 'status', 'created_on')
@@ -13,3 +13,5 @@ class TrendAdmin(admin.ModelAdmin):
 # Register your models here.
 admin.site.register(Blog, BlogAdmin)
 admin.site.register(Trend,TrendAdmin)
+admin.site.register(Message)
+admin.site.register(Newsletter)

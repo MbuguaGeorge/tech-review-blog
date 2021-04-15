@@ -13,6 +13,7 @@ html {
 body {
     margin: 0;
     padding: 0;
+
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 *{
@@ -425,7 +426,7 @@ hr{
     display: none;
 }
 .about_us{
-    background: linear-gradient(to top, rgba(0, 0, 0, .6), rgba(0, 0, 0, .5)), url(../images/banner2.jpg) center no-repeat ;
+    background: linear-gradient(to top, rgba(0, 0, 0, .6), rgba(0, 0, 0, .5)), url(../images/banner6.jpg) center no-repeat ;
     background-size: cover;
     height: 77.7vh;
 }
@@ -443,9 +444,13 @@ hr{
     font-weight: 700;
     margin-top: 350px;
 }
+.about_page p span{
+    font-weight: 700;
+    font-size: 1.5rem;
+}
 .about_page p{
     color: white;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: 'Times New Roman', Times, serif;
     font-size: 1.2rem;
 }
 /* Responsive */
@@ -558,5 +563,16 @@ hr{
     }
     .side__bar{
         float: none;
+    }
+    .about_page{
+        margin-left: 0;
+        margin-left: 20px;
+    }
+    .about_page h1{
+        margin-top: 0;
+        margin-top: 300px;
+    }
+    .about_us{
+        height: 90.3vh;
     }
 }
