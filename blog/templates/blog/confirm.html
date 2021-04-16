@@ -3,17 +3,22 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>tech review</title>
+        <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <Link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css" />
+        <link rel="stylesheet" type="text/css" href="{% static 'blog/css/style.css' %}">
     </head>
     <body>
-        {% if email %}
-        <p>{{email}} has been {{action}} </p>
-        <form method="post" >
-            <input 
-                type='text'
-                value="text"
-            />
-        </form>
-        {% endif %}
+        <div class="confirm">
+            {% if email %}
+            <div class="confirm_message">
+                <img src="{% static 'blog/images/email.svg' %}" width=150/>
+                <h4>Newsletter Subscription</h4>
+                <p>{{ action }}.</p>
+            </div>
+            {% endif %}
+        </div>
     </body>
 </html>

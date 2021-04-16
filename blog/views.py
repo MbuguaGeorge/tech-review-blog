@@ -38,13 +38,13 @@ def About(request):
 
 def contact(request):
     if request.method == 'POST':
-        form = ContactForm(request.POST)
-        if form.is_valid():
-            form.save()
+        form_a = ContactForm(request.POST)
+        if form_a.is_valid():
+            form_a.save()
             return HttpResponseRedirect('home')
     else:
-        form = ContactForm()
-        return render(request, 'blog/contact.html', {'form' : form})
+        form_a = ContactForm()
+        return render(request, 'blog/contact.html', {'form_a' : form_a})
 
 def random_digits():
     return "%0.6d" % random.randint(0, 999999)
@@ -61,21 +61,21 @@ def blog(request):
             subject='Newsletter Confirmation',
             html_content='Thank you for subscribing to my email newsletter! \
                 Please complete the process by \
-                <a href="{}/confirm/?email={}&confirmation_number={}"> clicking here to \
+                <a href="{}/?email={}&confirmation_number={}"> clicking here to \
                 confirm your registration </a>.'.format(request.build_absolute_uri('confirm'),
                 sub.email,
                 sub.confirmation_number))
         sg = SendGridAPIClient(settings.SENDGRID_API_KEY)
         response = sg.send(message)
-        return render(request, 'blog/Blog.html', {'email':sub.email, 'action' : 'added', 'b' : b, 'form' : SubscriberForm()})
+        return render(request, 'blog/confirm.html', {'email':sub.email, 'action' : 'A confirmation message has been sent to your email. Click the link to confirm your registration','form' : SubscriberForm()})
     else:
         return render(request, 'blog/Blog.html', {'b' : b,'form': SubscriberForm()})
 
 def Confirm(request):
-    sub = Newsletter.objects.get(email=request.Get['email'])
+    sub = Newsletter.objects.get(email=request.GET['email'])
     if sub.confirmation_number == request.GET['confirmation_number']:
         sub.confirmed = True
         sub.save()
-        return render(request, 'blog/index.html', {'email':sub.email, 'action':'confirmed'})
+        return render(request, 'blog/confirm.html', {'email':sub.email, 'action':'Thank you for subscribing to my email newsletter'})
     else:
-        return render(request, 'blog/index.html', {'email':sub.email, 'action':'denied'})
+        return render(request, 'blog/confirm.html', {'email':sub.email, 'action':'Sorry, your email was denied. Try entering a valid email address.'})

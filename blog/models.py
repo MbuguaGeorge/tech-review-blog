@@ -64,7 +64,7 @@ class Message(models.Model):
         return self.sender
 
 class Newsletter(models.Model):
-    email = models.EmailField(max_length=100)
+    email = models.EmailField(max_length=100, unique=True)
     confirmation_number = models.CharField(max_length=15)
     confirmed = models.BooleanField(default=False)
 

@@ -1,7 +1,8 @@
+from django.forms import ModelForm
 from django import forms
 from .models import Message, Newsletter
 
-class ContactForm(forms.ModelForm):
+class ContactForm(ModelForm):
     class Meta:
         model = Message
         fields = '__all__'

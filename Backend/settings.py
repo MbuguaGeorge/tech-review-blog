@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'tinymce',
     'django.contrib.staticfiles',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -132,3 +133,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 FROM_EMAIL = 'mburug027@gmail.com'
 SENDGRID_API_KEY = os.environ.get('SENDGRID_API_KEY')
+
+CRISPY_TEMPLATE_PACK='uni_form'

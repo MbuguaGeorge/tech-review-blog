@@ -17,11 +17,13 @@ from django.contrib import admin
 from django.urls import path, include
 from django.contrib.staticfiles.urls import static, staticfiles_urlpatterns
 from django.conf import settings
+from blog import views
 
 urlpatterns = [
     path('', include('blog.urls')),
     path('tinymce/', include('tinymce.urls')),
     path('admin/', admin.site.urls),
+    path('confirm/', views.Confirm, name='confirm'),
 ]
 urlpatterns += staticfiles_urlpatterns()
 if settings.DEBUG:
