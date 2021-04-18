@@ -80,11 +80,8 @@
         <div class="container">
             <div class="blog-page">
                 <div class="blog">
-                    <h2>DevBlog - A Blog Made For Technology Lovers</h2>
+                    <h2>A Blog Made For Technology Lovers</h2>
                     <p>Welcome to my blog. Subscribe and get my latest blog posts direct to your email.</p>
-                    {% if email %}
-                    <p>{{ action }}.</p>
-                    {% endif %}
                     {% if form %}
                     <form method="POST" novalidate >
                         {% csrf_token %}

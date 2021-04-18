@@ -58,7 +58,7 @@ class Trend(models.Model):
 class Message(models.Model):
     sender = models.CharField(max_length=50)
     email = models.EmailField(max_length=100)
-    content = models.CharField(max_length=100)
+    content = models.TextField()
 
     def __str__(self):
         return self.sender
