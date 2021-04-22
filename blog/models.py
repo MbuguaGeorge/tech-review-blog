@@ -24,7 +24,7 @@ CATEGORY = (
 
 class Blog(models.Model):
     title = models.CharField(max_length=200, unique=True)
-    slug = models.SlugField(max_length=200, unique=True, primary_key=True)
+    slug = models.SlugField(max_length=255, unique=True, primary_key=True)
     updated_on = models.DateTimeField(auto_now=True)
     content = HTMLField('content')
     created_on = models.DateTimeField(auto_now_add=True)
@@ -40,7 +40,7 @@ class Blog(models.Model):
 
 class Trend(models.Model):
     title = models.CharField(max_length=200,unique=True)
-    slug = models.SlugField(max_length=200, unique=True,primary_key=True)
+    slug = models.SlugField(max_length=255, unique=True,primary_key=True)
     updated_on = models.DateTimeField(auto_now=True)
     content = HTMLField('content')
     created_on = models.DateTimeField(auto_now_add=True)
@@ -65,8 +65,8 @@ class Message(models.Model):
 
 class Newsletter(models.Model):
     email = models.EmailField(max_length=100, unique=True)
-    confirmation_number = models.CharField(max_length=15)
     confirmed = models.BooleanField(default=False)
+    confirmation_number = models.CharField(max_length=15)
 
     def __str__(self):
         return self.email + " (" + ("not " if not self.confirmed else "") + "confirmed)"
