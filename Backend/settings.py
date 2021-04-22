@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 import os
 import environ
 from pathlib import Path
+import django_heroku
 
 env = environ.Env()
 environ.Env.read_env()
@@ -143,3 +144,5 @@ FROM_EMAIL = 'mburug027@gmail.com'
 SENDGRID_API_KEY = os.environ.get('SENDGRID_API_KEY')
 
 CRISPY_TEMPLATE_PACK='uni_form'
+
+django_heroku.settings(locals())
