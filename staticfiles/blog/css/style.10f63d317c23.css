@@ -1,0 +1,608 @@
+@charset "UTF-8";
+@-o-viewport{
+    zoom: 1;
+    width: extend-to-zoom;
+}
+html {
+    font-size: 90%;
+    box-sizing: border-box;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+/* Navigation Style */
+.navigation{
+    min-height: 15vh;
+    box-shadow: 0 10px 40px -14px #ddd,
+    0 10px 40px -10px #ddd;
+}
+nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: transparent;
+    width: 100%;
+    overflow: hidden;
+    padding-bottom: 20px;
+}
+#nav-links{
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+}
+nav li{
+    list-style: none;
+}
+nav li a:hover{
+    color: crimson;
+    transition-delay: 0.1s;
+}
+nav li a{
+    color: black;
+    text-decoration: none;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+}
+.logo h2{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 2rem;
+    font-weight: 700;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+.logo ul li{
+    list-style: none;
+}
+.logo ul{
+    display: flex;
+    justify-content: space-around;
+    width: 8%;
+}
+.logo form input[type="text"]{
+    border-radius: 20px;
+    padding-left: 10px;
+    height: 6vh;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border: 1px #ddd solid;
+}
+
+.logo form button{
+    border-radius: 20px;
+    padding: 9px 9px;
+    background-color: #111;
+    color: white;
+    border: 1px #111 solid;
+    font-size: 12px;
+    width: 50px;
+    cursor: pointer;
+}
+/* End of Navigation Style */
+.recent__blogs{
+    height: 80vh;
+    background: linear-gradient(to top, rgba(0, 0, 0, .6), rgba(0, 0, 0, .5)), url("../images/banner10.8784cb962b05.jpg") center no-repeat ;
+    background-size: cover;
+    padding: 50px;
+}
+.recent__blog__text{
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 200px;
+}
+.recent__blog__text h2{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 4rem;
+    font-weight: 700;
+    color: white;
+    padding: 10px;
+}
+.recent__blog__text p{
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 20px;
+    font-size: 1.5rem;
+}
+.cover-page{
+    margin: 100px;
+}
+.cover-page ul li a{
+    display: flex;
+    text-decoration: none;
+    width: 900px;
+    padding: 30px;
+}
+.cover-page ul li a:hover{
+    opacity: 0.7;
+}
+.cover-page ul li{
+    list-style: none;
+}
+.cover-page ol button{
+    padding: 2px 2px;
+    background-color: #e3a102;
+    border: 1px #e3a102 solid;
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1rem;
+}
+.cover-page h2{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 700;
+}
+.cover-page ul li img{
+    width: 300px;
+    border-radius: 2px;
+    margin-right: 20px;
+}
+.cover-page ol h3{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 600;
+    color: #111;
+}
+.cover-page ol p{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #111;
+}
+.cover-page ol small{
+    color: #1c1c1c;
+    font-size: 1rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.contact{
+    padding: 20px;
+}
+
+textarea{
+    display: block;
+    padding: 15px;
+    width: 150vh;
+    border: 1px #ddd solid;
+    border-radius: 4px;
+    font-size: 1.2rem;
+}
+.contact-page input[type="text"],.contact-page input[type="email"]{
+    display: block;
+    padding: 15px;
+    width: 100vh;
+    border: 1px #ddd solid;
+    border-radius: 4px;
+    font-size: 1.2rem;
+}
+.contact-page form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 30rem;
+}
+@media only screen and (max-width:800px){
+    .contact-page input[type="text"],.contact-page input[type="email"]{
+        width: 70vh;
+    }
+}
+.textarea{
+    width: 100vh;
+    height: 100px;
+}
+.contact-page input[type="submit"]{
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #ddd;
+    padding: 15px 30px;
+    color: black;
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+    letter-spacing: 2px;
+    background-color: #ddd;
+    font-size: 1.2rem;
+}
+.contact-page input[type="submit"]:hover{
+    background: #2ecc71;
+    color: white;
+}
+.contact-page h2{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 0;
+    font-weight: 800;
+    font-size: 2rem;
+    letter-spacing: 2px;
+}
+.main-part{
+    background-color: #1c1c1c;
+}
+.blog{
+    background-color: whitesmoke;
+    padding: 40px;
+}
+.blog h2{
+    text-align: center;
+    padding: 40px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 2rem;
+    font-weight: 1000;
+    padding-bottom: 5px;
+}
+.blog p{
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.05rem;
+}
+.blog form{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    padding-bottom: 30px;
+}
+.blog input[type="text"]{
+    height: 5vh;
+    border: 1px #111 solid;
+    padding: 5px 5px;
+}
+.blog input[type="submit"]{
+    background-color: steelblue;
+    border: 1px steelblue solid;
+    height: 5vh;
+    padding: 5px 5px;
+    cursor: pointer;
+    color: white;
+}
+.blog-post{
+    padding: 30px;
+    padding-left: 150px;
+}
+.blog-page{
+    padding-bottom: 50px;
+}
+.blog-post h4{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 700;
+}
+.blog-post button{
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: transparent;
+    padding: 7px 8px;
+    color: black;
+    border: 1px green solid;
+}
+.daily_blog{
+    padding-left: 150px;
+}
+.blog__container{
+    box-sizing: border-box;
+}
+.blog__container .column{
+    display: inline-flex;
+}
+.blog__container ol{
+    width: 280px;
+    padding: 8px;
+}
+.blog__container ol p:hover{
+    color: #e3a102;
+}
+.blog__container img{
+    width: 300px;
+    border-radius: 5px;
+}
+.blog__container a{
+    text-decoration: none;
+}
+hr{
+    margin-right: 150px;
+    margin-left: 150px;
+}
+.post__container{
+    padding-top: 50px;
+    padding-left: 100px;
+    padding-bottom: 100px;
+    padding-right: 100px;
+}
+.post{
+    float: left;
+    width: 700px;
+}
+.post ol{
+    margin-bottom: 100px;
+    margin-left: 50px;
+    width: 630px;
+}
+.post img{
+    padding: 30px;
+    width: 700px;
+    height: 450px;
+}
+.post ol h3{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    padding-bottom: 10px;
+}
+.post ol small{
+    color: #ddd;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1rem;
+}
+.post ol p{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding-top: 20px;
+}
+/* Trends */
+.trends{
+    margin-top: 50px;
+    margin-left: 185px;
+}
+.trend-container img{
+    width: 300px;
+}
+.column{
+    display: inline-flex;
+    padding: 10px;
+}
+.trend-container{
+    width: 300px;
+    box-sizing: border-box;
+    box-shadow: 1px 1px 15px #ddd,
+    -1px -1px 15px #ddd;
+}
+.trend-container ol{
+    padding-bottom: 20px;
+}
+.trend-container ol h4{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.7rem;
+    font-weight: 700;
+    padding: 5px;
+}
+.trend-container ol small{
+    color: #ddd;
+    padding: 15px;
+}
+.trend-container ol p{
+    padding: 5px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.trend-container ol a{
+    text-decoration: none;
+    color: green;
+    padding: 10px;
+}
+.trends h2{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+.side__bar{
+    float: right;
+    padding: 50px;
+    width: 300px;
+}
+.side__bar h2{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-bottom: 30px;
+}
+.side__bar ul{
+    width: 300px;
+    padding: 20px;
+}
+.side__bar ul li{
+    list-style: none;
+    display: flex;
+    margin-bottom: 20px;
+}
+.side__bar ol{
+    margin-right: 8px;
+    font-size: 1.5rem;
+    color: #ddd;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.side__bar ul li a{
+    text-decoration: none;
+}
+.side__bar ul li a h4{
+    color: #111;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+.side__bar ul li a small{
+    color: #ddd;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding: 20px;
+}
+.logo a.icon {
+    display: none;
+  }
+#social{
+    display: none;
+}
+.about_us{
+    background: linear-gradient(to top, rgba(0, 0, 0, .6), rgba(0, 0, 0, .5)), url("../images/banner6.8e53e2b13a4c.jpg") center no-repeat ;
+    background-size: cover;
+    height: 77.7vh;
+}
+.about_page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 900px;
+    height: 35rem;
+}
+.about_page h1{
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-top: 350px;
+}
+.about_page p span{
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+.about_page p{
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.2rem;
+}
+.confirm{
+    display: flex;
+    height: 40rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+.confirm_message{
+    background-color: #ddd;
+    padding: 20px 40px;
+    box-sizing: border-box;
+    box-shadow: 0 10px 40px -14px #ddd,
+    0 10px 40px -10px #ddd;
+}
+/* Responsive */
+@media only screen and (max-width:1024px){
+    .logo a.icon{
+        display: block;
+        right: 0;
+        left: 0;
+        font-size: 1.8rem;
+    }
+    #nav-links{
+        background-color: #1c1c1c;
+        display: none;
+        text-align: center;
+        width: 100%;
+    }
+    nav li a{
+        color: white;
+    }
+    .logo ul{
+        display: none;
+    }
+    #social{
+        display: none;
+        background-color: #1c1c1c;
+        width: 100%;
+        justify-content: center;
+    }
+    #social li a{
+        color: white;
+    }
+}
+@media only screen and (max-width:880px){
+    hr{
+        display: none;
+    }
+    nav{
+        padding-bottom: 0;
+        display: flex;
+    }
+    nav li{
+        padding: 10px;
+    }
+    .logo form input[type="text"]{
+        display: none;
+    }
+    .navigation{
+        min-height: 0;
+    }
+    .logo{
+        margin-bottom: 0;
+    }
+    .textarea{
+        width: 70vh;
+    }
+    .logo form button{
+        background-color: white;
+        color: #000;
+        border: 1px white solid;
+        font-size: 20px;
+    }
+    .cover-page{
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .recent__blog__text{
+        margin-left: 10px;
+    }
+    .cover-page ul li a{
+        display: block;
+    }
+    .cover-page ul li a ol{
+        padding: 10px;
+    }
+    .cover-page ul li a{
+        width: 450px;
+    }
+    .cover-page ul li img{
+        width: 350px;
+    }
+    .cover-page ul li a:hover{
+        opacity: 0.8;
+    }
+    .blog-post{
+        padding-left: 20px;
+    }
+    .trends{
+        margin-left: 20px;
+        text-align: center;
+    }
+    .blog-post a{
+        padding: 5px;
+    }
+    .post__container{
+        padding-left: 0;
+        padding-right: 0;
+        padding-bottom: 0;
+    }
+    .post img{
+        width: 450px;
+        height: auto;
+        padding: 10px;
+        
+    }
+    .post{
+        float: none;
+    }
+    .post ol{
+        width: 400px;
+        margin-left: 20px;
+    }
+    .side__bar{
+        float: none;
+    }
+    .about_page{
+        margin-left: 0;
+        margin-left: 20px;
+    }
+    .about_page h1{
+        margin-top: 0;
+        margin-top: 300px;
+    }
+    .about_us{
+        height: 90.3vh;
+    }
+}
